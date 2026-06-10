@@ -20,22 +20,28 @@ Based on the uploaded experimental artifacts, the repository maintains the follo
 └── README.md                  # Comprehensive repository documentation
 
 ## Dataset Specifications
+
 The experiments utilize the benchmark dataset from the DengAI: Predicting Disease Spread competition distributed by DrivenData. The dataset encompasses weekly reported dengue case counts and 24 environmental covariates (meteorological measurements, station temperatures, and vegetation indices) for San Juan, Puerto Rico, and Iquitos, Peru, spanning from 1990 to 2013.
 
-- Data Source                   # https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/
+* **Data Source:** [DrivenData DengAI Benchmark](https://www.drivendata.org/competitions/44/dengai-predicting-disease-spread/)
 
 ## Experimental Environment & Dependencies
+
 To ensure absolute computational determinism and reproducibility, the experiments were executed using Python 3.10+ with the following primary software stack:
-  1. scikit-learn (For SVR, PCA, and standard preprocessing validation transformers)
-  2. xgboost (For the gradient boosting baseline implementation)
-  3. pandas & openpyxl (For processing the structural .xlsx data matrices)
+
+* **`scikit-learn`** (For SVR, PCA, and standard preprocessing validation transformers)
+* **`xgboost`** (For the gradient boosting baseline implementation)
+* **`pandas` & `openpyxl`** (For processing the structural .xlsx data matrices)
+
 All wall-clock computational overhead benchmarks recorded in the manuscript (averaging 11 to 15 seconds for exhaustive tuning) were evaluated on a local computational workstation equipped with an Intel Core i7-12700H processor and 16 GB of RAM, running a Windows 11 Pro operating system environment.
 
 ## Methodological Core Features
-  1. Leakage-Free Preprocessing: To prevent forward-looking data leakage, all preprocessing steps (including median imputation, Z-score outlier filtering, standardization, and PCA) are strictly fitted exclusively on the inner training partitions of each split before transforming validation/test boundaries.
-  2. Decoupled Validation Logic: The main evaluation utilizes a rigorous nested time-series cross-validation framework to completely isolate inner-loop parameter tuning from outer-loop generalization error estimation.
+
+1. **Leakage-Free Preprocessing:** To prevent forward-looking data leakage, all preprocessing steps (including median imputation, Z-score outlier filtering, standardization, and PCA) are strictly fitted exclusively on the inner training partitions of each split before transforming validation/test boundaries.
+2. **Decoupled Validation Logic:** The main evaluation utilizes a rigorous nested time-series cross-validation framework to completely isolate inner-loop parameter tuning from outer-loop generalization error estimation.
 
 ## Citation
+
 If you utilize this codebase, the pipeline architectures, or the empirical findings in your research, please cite our definitive peer-reviewed paper:
 
-Caesarizky OY, Ilham A, Khikmah L, Madani F: Evaluating the Statistical Significance of Grid Search Optimization in Support Vector Regression for Dengue Forecasting Using Nested Time-Series Cross-Validation. Cureus J Comput Sci. 2026. DOI: [Pending Publisher Assignment]
+> Caesarizky OY, Ilham A, Khikmah L, Madani F: Evaluating the Statistical Significance of Grid Search Optimization in Support Vector Regression for Dengue Forecasting Using Nested Time-Series Cross-Validation. Cureus J Comput Sci. 2026. DOI: [Pending Publisher Assignment]
