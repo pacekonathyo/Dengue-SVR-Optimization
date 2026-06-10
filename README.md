@@ -4,6 +4,13 @@ This repository contains the official implementation, source code notebooks, and
 
 The study rigorously evaluates whether exhaustive grid-search hyperparameter optimization yields statistically significant predictive enhancements for Support Vector Regression (SVR) in weekly dengue case forecasting when compared against default-hyperparameter configurations.
 
+## Authors
+
+* **Ovien Y. Caesarizky**
+* **Dr. Ahmad Ilham**
+* **Dr. Laelatul Khikmah**
+* **Faiq Madani**
+
 ## Repository Structure
 
 Based on the uploaded experimental artifacts, the repository maintains the following structure:
@@ -18,7 +25,7 @@ Based on the uploaded experimental artifacts, the repository maintains the follo
 ├── dengue_features_test.xlsx  # Environmental and meteorological testing features
 ├── dengue_labels_train.xlsx   # Ground truth weekly dengue case counts for training
 └── README.md                  # Comprehensive repository documentation
-
+```
 ## Dataset Specifications
 
 The experiments utilize the benchmark dataset from the DengAI: Predicting Disease Spread competition distributed by DrivenData. The dataset encompasses weekly reported dengue case counts and 24 environmental covariates (meteorological measurements, station temperatures, and vegetation indices) for San Juan, Puerto Rico, and Iquitos, Peru, spanning from 1990 to 2013.
@@ -45,3 +52,5 @@ All wall-clock computational overhead benchmarks recorded in the manuscript (ave
 If you utilize this codebase, the pipeline architectures, or the empirical findings in your research, please cite our definitive peer-reviewed paper:
 
 > Caesarizky OY, Ilham A, Khikmah L, Madani F: Evaluating the Statistical Significance of Grid Search Optimization in Support Vector Regression for Dengue Forecasting Using Nested Time-Series Cross-Validation. Cureus J Comput Sci. 2026. DOI: [Pending Publisher Assignment]
+
+
